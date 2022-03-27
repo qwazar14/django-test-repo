@@ -1,0 +1,21 @@
+{% extends 'books/base.html'%}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Книги</h1>
+    {% if books %}
+        {% for book in books %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ book.title }}</h3>
+                <p>{{ book.description }}</p>
+                <p>{{ book.authors }}</p>
+                <p>{{ book.genre }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Записей нет!</p>
+    {% endif %}
+{% endblock %}
